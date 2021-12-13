@@ -1,0 +1,4 @@
+interaction:
+  path: '/api/interact/{interaction}'
+  defaults:
+    _controller: '\Drupal\interactions\Controller\Interaction'
