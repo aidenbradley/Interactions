@@ -3,3 +3,7 @@ interaction:
   defaults:
     _controller: '\Drupal\interactions\Controller\Interaction'
   methods: [PATCH]
+  options:
+    no_cache: 'TRUE'
+  requirements:
+    _access: 'TRUE'
