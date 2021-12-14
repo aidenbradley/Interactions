@@ -3,9 +3,8 @@
 namespace Drupal\Tests\interactions\Kernel;
 
 use Drupal\Core\Url;
-use Drupal\helpers\Concerns\Tests\MakesHttpRequests;
 use Drupal\KernelTests\KernelTestBase;
-use Symfony\Component\HttpFoundation\Response;
+use Drupal\Tests\interactions\Kernel\Concerns\MakesHttpRequests;
 
 class InteractionsTest extends KernelTestBase
 {
@@ -23,13 +22,8 @@ class InteractionsTest extends KernelTestBase
         ]);
 
         $this->get($endpoint)->assertMethodNotAllowed();
-        drupal_flush_all_caches();
-
         $this->put($endpoint)->assertMethodNotAllowed();
-        drupal_flush_all_caches();
-
         $this->delete($endpoint)->assertMethodNotAllowed();
-        drupal_flush_all_caches();
 
         $this->post($endpoint)->assertOk();
     }
