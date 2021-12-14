@@ -23,8 +23,13 @@ class InteractionsTest extends KernelTestBase
         ]);
 
         $this->get($endpoint)->assertMethodNotAllowed();
+        drupal_flush_all_caches();
+
         $this->put($endpoint)->assertMethodNotAllowed();
+        drupal_flush_all_caches();
+
         $this->delete($endpoint)->assertMethodNotAllowed();
+        drupal_flush_all_caches();
 
         $this->post($endpoint)->assertOk();
     }
