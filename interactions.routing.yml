@@ -2,8 +2,8 @@ interaction:
   path: '/api/interact/{interaction}'
   defaults:
     _controller: '\Drupal\interactions\Controller\Interaction'
-  methods: [PATCH]
+  methods: [POST]
   options:
-    no_cache: 'TRUE'
+    no_cache: TRUE
   requirements:
     _access: 'TRUE'

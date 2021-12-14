@@ -16,18 +16,17 @@ class InteractionsTest extends KernelTestBase
     ];
 
     /** @test */
-    public function route_only_accepts_patch()
+    public function only_accepts_patch()
     {
         $endpoint = $this->route('interaction', [
             'interaction' => 'like',
         ]);
 
         $this->get($endpoint)->assertMethodNotAllowed();
-        $this->post($endpoint)->assertMethodNotAllowed();
         $this->put($endpoint)->assertMethodNotAllowed();
         $this->delete($endpoint)->assertMethodNotAllowed();
 
-        $this->patch($endpoint)->assertOk();
+        $this->post($endpoint)->assertOk();
     }
 
     private function route(string $route, array $parameters = [], array $options = []): string
